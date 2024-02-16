@@ -24,7 +24,7 @@ app.get('/average',(req,res)=>{
     res.send(avgData) ;
 })
 
-app.listen(8000,()=>{
+app.listen( 8000|| process.env.PORT,()=>{
     console.log('listening to the port no 8000') ;
 }) ;
 
