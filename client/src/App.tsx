@@ -18,9 +18,10 @@ function App() {
 
   const [data, setData] = useState<dataItem[]>([] as dataItem[]);
   const [avgData, setAvgData] = useState<avgItem>({} as avgItem);
-
+  
+  
   const getData = async () => {
-    fetch('http://localhost:8000/quotes')
+    fetch(`${import.meta.env.VITE_BACKEND_URL1}quotes`)
     .then((res) => res )
     .then((e)=>e.json())
     .then((e)=>setData(e))
@@ -29,7 +30,7 @@ function App() {
   }
 
   const getAverageData = async () => {
-    fetch('http://localhost:8000/average')
+    fetch(`${import.meta.env.VITE_BACKEND_URL1}average`)
     .then((res) => res )
     .then((e)=>e.json())
     .then((e)=>setAvgData(e as avgItem))
